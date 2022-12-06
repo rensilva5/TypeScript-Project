@@ -1,11 +1,19 @@
-const character = 'Renzo'
+let character = 'Renzo'
 
-console.log(character)
+let age = 30
 
-const inputs = document.querySelectorAll("input")
+let isGreen = false
 
-console.log(inputs)
+character = "Silva"
 
-inputs.forEach(function (input) {
-    console.log(input)
-})
+// In typeSvcript a type will always be the same
+// variables can chance, but with the same type.
+// Double and single quatiotion are ok.
+// JS uses Inference.
+// Less errors in the process.
+
+const circ = (diameter: number) => {
+    return diameter * Math.PI
+}
+
+console.log(circ(6))
