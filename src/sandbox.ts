@@ -1,19 +1,22 @@
-let greet: Function
+// let greet: Function
 
-greet = () => {
-    console.log('hello')
+const logDetails = (uid: string |number, item: string) => { // pass optional parameters at the end.
+    console.log(`${item} has a uid of ${uid}`)
 }
 
-const add = (a: number, b: number, c: number | string = 14) => { // pass optional parameters at the end.
-    console.log(a + b)
-    console.log(c)
+const greet = (user: {name: string, uid: string | number}) => {
+    console.log(`${user.name} says hello`)
 }
 
-add(5, 12)
+// we can go around this long specifiactions by creating types
+type StringOrNum = string | number
 
-const minus = (a: number, b: number) => {
-    return a + b;
+const logDetails1 = (uid: StringOrNum, item: string) => { // pass optional parameters at the end.
+    console.log(`${item} has a uid of ${uid}`)
 }
+//or
+type objWithName = {name: string, uid: string|number}
 
-let result = minus(4,5)
-console.log(result)    // TS is infering this is a type number.
+const greet1 = (user: objWithName) => {
+    console.log(`${user.name} says hello`)
+}

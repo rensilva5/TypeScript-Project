@@ -1,15 +1,14 @@
 "use strict";
-let greet;
-greet = () => {
-    console.log('hello');
+// let greet: Function
+const logDetails = (uid, item) => {
+    console.log(`${item} has a uid of ${uid}`);
 };
-const add = (a, b, c = 14) => {
-    console.log(a + b);
-    console.log(c);
+const greet = (user) => {
+    console.log(`${user.name} says hello`);
 };
-add(5, 12);
-const minus = (a, b) => {
-    return a + b;
+const logDetails1 = (uid, item) => {
+    console.log(`${item} has a uid of ${uid}`);
 };
-let result = minus(4, 5);
-console.log(result); // TS is infering this is a type number.
+const greet1 = (user) => {
+    console.log(`${user.name} says hello`);
+};
