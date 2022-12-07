@@ -1,38 +1,40 @@
-let names = ['carl', 'tommy', 'tom']
+// explicit types, example bellow
+let character: string
+let age: number
+let isLogged: boolean
 
-names.push('charles')
+age = 34
 
-// names.push(4)  the type cannot be changed 
-// names[0] = 3   the type cannot be reasigned with a different type.
+// isLogged = 40  cannot happened
+isLogged = false
 
-let numbers = [10, 20, 40, 50]
+//arrays work this way
+let warriors: string[] = []
+// warriors = ['pet', 'jhon']
 
+warriors.push('peter')
 
-// when we have declared different types, we can assign, reassign, or change. See example bellow 
-let mixed = ['jhon', 4, true, 'thomas'] 
-
-mixed.push(5)
-mixed.push('martin')
-mixed[0] = 5
-
+//union types: are several types
+let mixed: (string | number | boolean)[] = [] // this array can be any type of these
+mixed.push('robert')
+mixed.push(41)
+mixed.push(true)
 console.log(mixed)
 
-// Objects //type cannot be changes as in variables.
-let ninja = {
-    name: 'mario',
-    belt: 'black',
-    age: 30
+// normal variable don't need parenthesis
+let enterId: string | number
+enterId = 3394
+enterId = 'paola'
+// enterId = false won't work
+
+// Objects
+let warriorOne: object
+warriorOne = { name: 'pan', age: 29 } //this is fine
+
+let warriorTwo: {
+    name: string,
+    age: number,
+    skills: string
 }
-
-ninja.age = 40 //this is fine
-ninja.name = 'tarzicio' //this is also fine.
-// ninja.name = 35 this is not gonna work.
-
-
-
-
-// In typeSvcript a type will always be the same
-// variables can chance, but with the same type.
-// Double and single quatiotion are ok.
-// JS uses Inference.
-// Less errors in the process.
+// then the keys must have the same key values.
+warriorTwo = { name: 'jason', age: 40, skills: 'fight' }
