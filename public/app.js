@@ -10,10 +10,15 @@
 // const form = document.querySelector('.new-item-form')! 
 // Classes --> blueprint for an object
 class Invoice {
-    constructor(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
+    // readonly client: string;
+    // private details: string;
+    // public amount: number
+    constructor(client, //this only work if we have these parameters in front
+    details, //this only work if we have these parameters in front
+    amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
     }
     format() {
         return `${this.client} owes $${this.amount} ${this.details}`;
@@ -25,10 +30,13 @@ const invTwo = new Invoice('Larry', 'work from office', 270);
 let invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
-invOne.client = 'Paul';
-invTwo.amount = 300;
-console.log(invOne, invTwo);
-console.log(invoices);
+invoices.forEach(inv => {
+    console.log(inv.client, inv.amount, inv.format());
+});
+// invOne.client = 'Paul'
+// invTwo.amount = 300
+// console.log(invOne, invTwo)
+// console.log(invoices)
 const form = document.querySelector('.new-item-form'); // the we can access diffrent methods.
 // console.log(form.children)
 // inputs

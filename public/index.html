@@ -89,3 +89,39 @@ type objWithName = {name: string, uid: string|number}
 const greet1 = (user: objWithName) => {
     console.log(`${user.name} says hello`)
 } -->
+
+
+<!-- Classes -->
+<!-- class Invoice {
+    client: string;
+    details: string;
+    amount: number
+
+    constructor(c: string, d: string, a: number) {
+        this.client = c
+        this.details = d
+        this.amount = a
+    }
+    format() {
+        return `${this.client} owes $${this.amount} ${this.details}`
+    }
+}
+
+const invOne = new Invoice('Harry', 'work from home', 230)
+const invTwo = new Invoice('Larry', 'work from office', 270)
+
+// console.log(invOne, invTwo)
+let invoices: Invoice[] = []
+invoices.push(invOne)
+invoices.push(invTwo)
+
+invoices.forEach(inv => {
+    console.log(inv.client, inv.details, inv.amount, inv.format())
+})
+
+// invOne.client = 'Paul'
+// invTwo.amount = 300
+
+// console.log(invOne, invTwo)
+
+// console.log(invoices) -->

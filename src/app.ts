@@ -14,15 +14,16 @@
 // Classes --> blueprint for an object
 
 class Invoice {
-    client: string;
-    details: string;
-    amount: number
+    // readonly client: string;
+    // private details: string;
+    // public amount: number
 
-    constructor(c: string, d: string, a: number) {
-        this.client = c
-        this.details = d
-        this.amount = a
-    }
+    constructor(
+        readonly client: string,  //this only work if we have these parameters in front
+        private details: string,  //this only work if we have these parameters in front
+        public amount: number,    //this only work if we have these parameters in front
+    ) {}
+
     format() {
         return `${this.client} owes $${this.amount} ${this.details}`
     }
@@ -36,12 +37,16 @@ let invoices: Invoice[] = []
 invoices.push(invOne)
 invoices.push(invTwo)
 
-invOne.client = 'Paul'
-invTwo.amount = 300
+invoices.forEach(inv => {
+    console.log(inv.client, inv.amount, inv.format())
+})
 
-console.log(invOne, invTwo)
+// invOne.client = 'Paul'
+// invTwo.amount = 300
 
-console.log(invoices)
+// console.log(invOne, invTwo)
+
+// console.log(invoices)
 
 
 
